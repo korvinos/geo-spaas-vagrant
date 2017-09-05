@@ -1,0 +1,11 @@
+---
+use_conda_cache: yes
+nansatmap_version: master
+test_nansatmap: no
+
+nansatmap_reqs:
+    - scipy
+    - matplotlib
+    - basemap
+    - basemap-data-hires
+    - cmocean

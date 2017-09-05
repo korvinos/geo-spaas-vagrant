@@ -1,5 +1,4 @@
 ---
-#usepython\tasks\nansat.yml
 - name: nansat | Update/checkout Nansat
   git: repo=https://github.com/nansencenter/nansat
        dest="{{ dev_sources_dir }}/nansat/"

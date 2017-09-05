@@ -11,6 +11,12 @@
     - "{{ mount_folders }}"
   when: mount_network_folders
   ignore_errors: yes
+  register: mounting
+
+- name: Local VM | Set fact mount_network_folders
+  set_fact:
+    mount_network_folders: "{{ mount_network_folders }}"
+  when: mounting|succeeded
 
 - name: Local VM | Create shared folder
   file: path="{{ shared_dir }}" state=directory

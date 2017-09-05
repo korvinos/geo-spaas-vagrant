@@ -1,11 +1,12 @@
 ---
 - hosts: course
   roles:
-    - localvm
-    - conda
-    - nansat
-    - sample_datasets
-    - course
+#    - localvm
+#    - conda
+#    - nansat
+    - nansatmap    
+#    - sample_datasets
+#    - course
   environment:
     PATH: "{{ conda_dir }}/bin:/usr/sbin:/usr/bin:/sbin:/bin"
     GDAL_DATA: "{{ conda_dir }}/share/gdal"

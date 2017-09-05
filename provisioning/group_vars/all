@@ -9,14 +9,6 @@ install_dir: "{{ home_dir }}"
 conda_dir: "{{ home_dir }}/miniconda"
 python_dist_packages: "{{ conda_dir }}/lib/python2.7/site-packages"
 
-# The following settings can be changed in group_vars/<vm name>
-pythesint_version: master
-nansat_version: develop
-geospaas_version: master
-add_sample_data: yes
-mount_network_folders: yes
-test_nansat: yes
-
 sample_files:
   - {name: MER_FRS_1PNPDK20120303_093810_000000333112_00180_52349_3561.N1, mapper: meris_l1}
   - {name: ASA_WSM_1PNPDK20081110_205618_000000922073_00401_35024_0844.N1, mapper: asar}

@@ -1,4 +1,5 @@
 ---
+#nansatmap\tasks\setup_python.yml
 - name: Python | Create conda_pkgs in shared folder
   file: path="{{ cache_dir }}/conda_pkgs/empty" state=directory
   when: use_conda_cache is defined and use_conda_cache
@@ -10,25 +11,9 @@
 - name: Python | Install Nansat requirements
   shell: 'conda install -q --yes -c conda-forge {{ item }}'
   with_items:
-    - "{{ nansat_reqs }}"
+    - "{{ nansatmap_reqs }}"
 
 - name: Python | Copy downloaded packages to cached conda_pkgs
   shell: 'cp {{ conda_dir }}/pkgs/*.[bt][zx][2t] {{ cache_dir }}/conda_pkgs/'
   when: use_conda_cache is defined and use_conda_cache
 
-- name: Python | Add GDAL_DATA to .bashrc
-  lineinfile: dest="{{ home_dir }}/.bashrc" line="export GDAL_DATA={{ conda_dir }}/share/gdal"
-
-- name: Python | Add CPL_ZIP_ENCODING to .bashrc
-  lineinfile: dest="{{ home_dir }}/.bashrc" line="export CPL_ZIP_ENCODING=UTF-8"
-
-- name: Python | Add links to some conda libraries to /usr/lib
-  become: yes
-  file: src="{{ conda_dir }}/lib/{{ item }}" dest="/usr/lib/{{ item }}" state=link
-  with_items:
-    - libgeos_c.so
-    - libgdal.so
-
-- name: Python | Run ldconfig
-  become: yes
-  shell: '/sbin/ldconfig'

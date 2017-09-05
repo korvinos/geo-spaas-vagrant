@@ -13,6 +13,8 @@ django_deploy_root_path: '{{ dev_sources_dir }}'
 django_project_name: "geospaas_project"
 django_project_path: '{{ django_deploy_root_path }}/{{ django_project_name }}'
 
+geospaas_version: master
+
 geospaas_static_root: "{{ dev_sources_dir }}/site_media/static"
 geospaas_media_root: "{{ dev_sources_dir }}/site_media/media/"
 geospaas_downloads_root: "{{ dev_sources_dir }}/site_media/downloads"
