@@ -1,4 +1,10 @@
 ---
+- include_role:
+    name: conda
+    tasks_from: conda_install
+  vars:
+    conda_pkgs: "{{ requirements }}"
+
 - include: setup_python.yml
 
 - include: py-thesaurus-interface.yml

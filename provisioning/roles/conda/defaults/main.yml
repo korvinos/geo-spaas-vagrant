@@ -1,5 +1,7 @@
 ---
 conda_filename: 'Miniconda-latest-Linux-x86_64.sh'
+use_conda_cache: yes
 setup_centos: no
 setup_ubuntu: yes
 ansible_ssh_user: vagrant
+conda_pkgs: []

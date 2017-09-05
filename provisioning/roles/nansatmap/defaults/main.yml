@@ -1,9 +1,8 @@
 ---
-use_conda_cache: yes
 nansatmap_version: master
 test_nansatmap: no
 
-nansatmap_reqs:
+requirements:
     - scipy
     - matplotlib
     - basemap
