@@ -1,5 +1,5 @@
 ---
-- name: Python: Run conda install
+- name: Python | Run conda install
   include_role:
     name: conda
     tasks_from: conda_install

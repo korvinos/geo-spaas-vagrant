@@ -7,7 +7,7 @@
   shell: 'cp {{ cache_dir }}/conda_pkgs/* {{ conda_dir }}/pkgs/ -r'
   when: use_conda_cache
 
-- name: Install | Install Nansat requirements
+- name: Install | Install new packages
   shell: 'conda install -q --yes -c conda-forge {{ item }}'
   with_items:
     - "{{ conda_pkgs }}"
