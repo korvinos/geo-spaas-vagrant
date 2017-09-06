@@ -21,5 +21,9 @@
     - libx11-dev
     - xterm
 
-- name: Ubuntu | Add Locale
+- name: Ubuntu | Add LC_ALL
   lineinfile: dest="{{ home_dir }}/.bashrc" line='export LC_ALL="en_US.UTF-8"'
+
+- name: Ubuntu | Add CPL_ZIP_ENCODING
+  lineinfile: dest="{{ home_dir }}/.bashrc" line='export CPL_ZIP_ENCODING="UTF-8"'
+

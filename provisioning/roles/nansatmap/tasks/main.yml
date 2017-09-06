@@ -4,7 +4,12 @@
     name: conda
     tasks_from: conda_install
   vars:
-    conda_pkgs: "{{ requirements }}"
+    conda_pkgs:
+      - scipy
+      - matplotlib
+      - basemap
+      - basemap-data-hires
+      - cmocean
 
 - name: nansatmap | Update/checkout Nansatmap
   git: repo=https://github.com/nansencenter/nansatmap

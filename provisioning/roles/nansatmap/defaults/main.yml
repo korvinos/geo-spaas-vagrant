@@ -1,10 +1,3 @@
 ---
 nansatmap_version: master
 test_nansatmap: no
-
-requirements:
-    - scipy
-    - matplotlib
-    - basemap
-    - basemap-data-hires
-    - cmocean

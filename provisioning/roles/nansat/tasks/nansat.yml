@@ -47,5 +47,5 @@
 
 - name: nansat | Nosetests
   shell: "nosetests nansat"
-  when: test_nansat is defined and test_nansat
+  when: test_nansat
   ignore_errors: yes

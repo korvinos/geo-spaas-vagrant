@@ -1,5 +1,13 @@
 ---
 #course/tasks/main.yml
+- include_role:
+    name: conda
+    tasks_from: conda_install
+  vars:
+    conda_pkgs:
+      - ipython
+      - jupyter
+
 - name: course | Update/checkout Nansat-Lectures
   git: repo=https://github.com/nansencenter/nansat-lectures
        dest="{{ dev_sources_dir }}/nansat-lectures/"

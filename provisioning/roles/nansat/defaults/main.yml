@@ -2,13 +2,3 @@
 nansat_version: issue196_strip_down
 pythesint_version: v1.1.1
 test_nansat: yes
-
-requirements:
-  - numpy
-  - nose
-  - netcdf4
-  - gdal
-  - pillow
-  - cfunits
-  - mock
-  - python-dateutil

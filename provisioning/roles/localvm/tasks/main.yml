@@ -15,7 +15,7 @@
 
 - name: Local VM | Set fact mount_network_folders
   set_fact:
-    mount_network_folders: "{{ mount_network_folders }}"
+    mount_network_folders: yes
   when: mounting|succeeded
 
 - name: Local VM | Create shared folder

@@ -1,11 +1,11 @@
 ---
 - name: Install | Create conda_pkgs in shared folder
   file: path="{{ cache_dir }}/conda_pkgs/empty" state=directory
-  when: use_conda_cache is defined and use_conda_cache
+  when: use_conda_cache
 
 - name: Install | Copy cached packages from conda_pkgs
   shell: 'cp {{ cache_dir }}/conda_pkgs/* {{ conda_dir }}/pkgs/ -r'
-  when: use_conda_cache is defined and use_conda_cache
+  when: use_conda_cache
 
 - name: Install | Install Nansat requirements
   shell: 'conda install -q --yes -c conda-forge {{ item }}'
@@ -14,4 +14,4 @@
 
 - name: Install | Copy downloaded packages to cached conda_pkgs
   shell: 'cp {{ conda_dir }}/pkgs/*.[bt][zx][2t] {{ cache_dir }}/conda_pkgs/'
-  when: use_conda_cache is defined and use_conda_cache
+  when: use_conda_cache

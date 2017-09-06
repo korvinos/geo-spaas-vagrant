@@ -1,8 +1,8 @@
 ---
 - include: setup_centos.yml
-  when: setup_centos is defined and setup_centos
+  when: setup_centos
 
 - include: setup_ubuntu.yml
-  when: setup_ubuntu is defined and setup_ubuntu
+  when: setup_ubuntu
 
 - include: setup_conda.yml
